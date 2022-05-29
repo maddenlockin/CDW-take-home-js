@@ -39,3 +39,7 @@ file structure:
 custom hooks?
 context?
 constants?
+
+Libraries:
+
+React External Link (https://github.com/acelaya/react-external-link) used in Item Component for default "rel='noopener noreferer'"

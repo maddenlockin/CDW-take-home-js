@@ -1,0 +1,1 @@
+// fetch takes in username and retrieves URL https://api.github.com/users/<username>
