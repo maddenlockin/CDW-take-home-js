@@ -5,13 +5,11 @@ import { database } from '../firebase';
 
 const collectionRef = collection(database, 'github-urls');
 
-export function getURLs() {
-  getDocs(collectionRef).then((snapshot) => {
-    let userURLs = [];
-    snapshot.docs.map((doc) => userURLs.push({ ...doc.data(), id: doc.id }));
-    console.log(userURLs);
-    return userURLs;
-  });
+export async function getAllURLs() {
+  const response = await getDocs(collectionRef);
+  let userURLs = [];
+  response.docs.map((doc) => userURLs.push({ ...doc.data(), id: doc.id }));
+  return userURLs;
 }
 
 export async function createURL(username) {
