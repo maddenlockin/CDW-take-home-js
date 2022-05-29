@@ -16,8 +16,10 @@ export default function List() {
   }, []);
   console.log(list, 'list');
   return (
-    <>
-      <Item />
-    </>
-  )
+    <ul className="url-list">
+      {list.map((item) => (
+        <Item key={item.id} username={item.username} />
+      ))}
+    </ul>
+  );
 }

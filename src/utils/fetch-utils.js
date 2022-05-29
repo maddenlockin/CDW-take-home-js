@@ -13,8 +13,6 @@ export async function getAllURLs() {
 }
 
 export async function createURL(username) {
-  const response = await addDoc(collectionRef, {
-    username: username
-  })
+  const response = await addDoc(collectionRef, username)
   console.log(response);
 }

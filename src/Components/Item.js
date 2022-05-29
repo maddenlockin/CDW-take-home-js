@@ -4,9 +4,13 @@ import { ExternalLink } from 'react-external-link';
 // return success or error message for given username
 // display as item in list? alert?
 
-export default function Item() {
-  const username = 'maddenlockin';
+export default function Item({ username }) {
   return (
-    <ExternalLink href={ `https://api.github.com/users/${username}`} className='github-url' />
+    <li>
+      <ExternalLink
+        href={`https://api.github.com/users/${username}`}
+        className="github-url"
+      />
+    </li>
   );
 }
