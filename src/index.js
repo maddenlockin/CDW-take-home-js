@@ -2,10 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyDnjfrZ37YE5LWkE8E3yZHTF96LSLVH3wo",
@@ -19,27 +16,10 @@ const firebaseConfig = {
 
 initializeApp(firebaseConfig);
 
-const database = getFirestore();
-const collectionRef = collection(database, 'github-urls');
-console.log('collectionRef', collectionRef);
-getDocs(collectionRef)
-  .then((snapshot) => {
-    let userURLs = []
-    snapshot.docs.map((doc) =>
-      userURLs.push({ ...doc.data(), id: doc.id })
-    )
-    console.log(userURLs)
-  });
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-// reportWebVitals();
 

@@ -5,13 +5,13 @@ export default function Search() {
     
   return (
     <div className="search-bar">
-      <form onSubmit={(e) => {
+      {/* <form onSubmit={(e) => {
             setUsername(e.target.value)}}>
         <input value={username} />
         <button>
           Search
         </button>
-      </form>
+      </form> */}
     </div>
   );
 }
