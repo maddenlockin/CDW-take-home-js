@@ -21,7 +21,15 @@ initializeApp(firebaseConfig);
 
 const database = getFirestore();
 const collectionRef = collection(database, 'github-urls');
-getDocs(collectionRef);
+console.log('collectionRef', collectionRef);
+getDocs(collectionRef)
+  .then((snapshot) => {
+    let userURLs = []
+    snapshot.docs.map((doc) =>
+      userURLs.push({ ...doc.data(), id: doc.id })
+    )
+    console.log(userURLs)
+  });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
