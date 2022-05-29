@@ -36,6 +36,18 @@ file structure:
   - Components / Search & List & Item & Header?Footer?
   - Services || utils / fetch-utils & helpers
 
+      app
+    |     |
+search     list
+              |
+              item
+App: 
+  - holds (list state) & passes down to List Component
+  - holds fetchFunction & passes down to Search Component
+
+Search: 
+  - on form submit, new username is created in Firebase (MUST UPDATE LIST VIEW)
+
 custom hooks?
 context?
 constants?

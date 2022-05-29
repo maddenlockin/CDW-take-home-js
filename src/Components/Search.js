@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { createURL } from '../utils/fetch-utils';
 
-export default function Search() {
+export default function Search({ fetchList }) {
   const [username, setUsername] = useState('');
     
   async function handleSubmit(e) {
     e.preventDefault();
     await createURL({username});
-
+    await fetchList();
     setUsername('');
   }
 
