@@ -6,9 +6,9 @@ import { database } from '../firebase';
 const collectionRef = collection(database, 'github-urls');
 
 export async function getAllURLs() {
-  const response = await getDocs(collectionRef);
+  const { docs } = await getDocs(collectionRef);
   let userURLs = [];
-  response.docs.map((doc) => userURLs.push({ ...doc.data(), id: doc.id }));
+  docs.map((doc) => userURLs.push({ ...doc.data(), id: doc.id }));
   return userURLs;
 }
 
