@@ -15,3 +15,8 @@ export async function getAllURLs() {
 export async function createURL(username) {
   await addDoc(collectionRef, username)
 }
+
+export async function githubStatus(username) {
+  const { status } = await fetch('https://api.github.com/users/' + username);
+  return status
+}

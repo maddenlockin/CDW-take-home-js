@@ -1,13 +1,20 @@
 import React, { useState } from 'react'
-import { createURL } from '../utils/fetch-utils';
+import { createURL, githubStatus } from '../utils/fetch-utils';
 
 export default function Search({ fetchList }) {
   const [username, setUsername] = useState('');
     
+  async function checkUser(){
+    const status = await githubStatus(username);
+    (status !== 200) 
+      ? alert('Error! This is not yet a Github username')
+      : await createURL({username});
+        await fetchList();
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
-    await createURL({username});
-    await fetchList();
+    await checkUser();
     setUsername('');
   }
 
