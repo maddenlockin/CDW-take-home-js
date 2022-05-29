@@ -17,3 +17,25 @@ Each row contains this information:
 
 The app does not need to worry about authentication or user-specific lists of any kind. The FireStore credentials can be hardcoded and don't need to be hidden in a .env file. Please use best practices when creating this application (such as separate out concerns/basic architecture) and provide a ReadMe markdown with explanations of your architecture decisions and other decisions you made about your app. Decisions may include use of third party libraries, a problem that came up and how you decided to solve it and/or reasons why you decided to structure your app a specific way. Unit testing will not be required for this challenge but is highly encouraged. As a baseline for bootstrapping, using the create react app with typescript is encouraged. For the parties reviewing your code, please include documentation in the ReadMe on how to get your up and running. Even if it is only a ‘npm i’ and ‘npm run start’, please make sure the scripts are correct and are documented on how to use your app. Below is a UX mock that should be followed for your build.
 
+____________________________________
+#### Plan: 
+ 
+  - search input
+  - button
+    - retrieves user's url
+    - updates state
+      - on state update, success message & save data in state arr db
+      - on error, display error message
+      - display state arr of db
+
+firebase: https://console.firebase.google.com/u/1/project/js-take-home/overview
+
+
+file structure: 
+  - views / Layout
+  - Components / Search & List & Item & Header?Footer?
+  - Services || utils / fetch-utils & helpers
+
+custom hooks?
+context?
+constants?
