@@ -39,6 +39,8 @@ file structure:
 custom hooks?
 context?
 constants?
+---------------------------------
+initalized with npx create-react-app
 
 Libraries:
 
